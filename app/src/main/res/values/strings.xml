@@ -1,0 +1,12 @@
+<resources>
+	<string name="app_name">Test Project</string>
+	<string name="loading_string">Loading</string>
+	<string name="cached_advice_message">XML is just data with that Internet shit wrapped around it. -Joe Romello,by way of Steve Sapovits</string>
+
+	<!--App Message-->
+	<string name="api_retry_error">Please retry!</string>
+	<string name="api_default_error">Something wrong happened!</string>
+	<string name="some_error">Some Error Occurred!</string>
+	<string name="connection_error">Internet connection lost!</string>
+
+</resources>

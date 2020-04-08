@@ -3,7 +3,7 @@ package com.fahmy.testproject.ui.base;
 import android.content.Context;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
-import com.fahmy.testproject.InterviewApp;
+import com.fahmy.testproject.TestApp;
 import com.fahmy.testproject.di.component.ActivityComponent;
 import com.fahmy.testproject.di.component.DaggerActivityComponent;
 import com.fahmy.testproject.di.module.ActivityModule;
@@ -21,7 +21,7 @@ public abstract class BaseActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         activityComponent = DaggerActivityComponent.builder()
                 .activityModule(new ActivityModule(this))
-                .applicationComponent(((InterviewApp) getApplication()).getApplicationComponent())
+                .applicationComponent(((TestApp) getApplication()).getApplicationComponent())
                 .build();
 
     }

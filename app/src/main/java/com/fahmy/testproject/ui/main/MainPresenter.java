@@ -30,7 +30,7 @@ public class MainPresenter<V extends MainMvpView> extends BasePresenter<V>
         if (getMvpView().inNetworkConnected()) {
             isReceivingData = true;
             Runnable task = () -> {
-                if (isReceivingData){
+                if (isReceivingData) {
                     getMvpView().onErrorMessageReceived(getDataManager().getAdvice());
                 }
             };
@@ -45,7 +45,7 @@ public class MainPresenter<V extends MainMvpView> extends BasePresenter<V>
                             getMvpView().hideLoading();
                             if (response.code() == 200 && response.body() != null) {
                                 getMvpView().renderAdviceMessageToUI(response.body());
-                            } else if (response.code() == 408) {
+                            } else if (response.code() == 408 || response.code() == 404) {
                                 getMvpView().onErrorMessageReceived(getDataManager().getAdvice());
                             } else {
                                 getMvpView().retryLoadingAdviceMessage();

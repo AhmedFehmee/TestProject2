@@ -27,7 +27,7 @@ public class TestComponentRule implements TestRule {
     }
 
     private void setupDaggerTestComponentInApplication() {
-        InterviewApp application = ((InterviewApp) mContext.getApplicationContext());
+        TestApp application = ((TestApp) mContext.getApplicationContext());
         mTestComponent = DaggerTestComponent.builder()
                 .applicationTestModule(new ApplicationTestModule(application))
                 .build();

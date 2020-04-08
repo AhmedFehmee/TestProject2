@@ -8,7 +8,7 @@ import com.fahmy.testproject.di.module.ApplicationModule;
 import com.fahmy.testproject.utils.AppConstants;
 import javax.inject.Inject;
 
-public class InterviewApp extends Application {
+public class TestApp extends Application {
     @Inject
     DataManager mDataManager;
 

@@ -63,18 +63,13 @@ public class MainActivityTest {
         main.launchActivity(intent);
 
         try {
-            onView(withId(R.id.tv_fortune)).check(matches(isDisplayed()));
-            onView(withId(R.id.tv_fortune)).check(matches((ViewMatchers.withText(R.string.loading_string))));
 
             Thread.sleep(10000L);
 
             onView(withId(R.id.progress_bar)).check(matches(not(isDisplayed())));
-            //onView(withId(R.id.tv_fortune)).check(matches((ViewMatchers.withText(R.string.cached_advice_message))));
 
             main.getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
             onView(withId(R.id.progress_bar)).check(matches(isDisplayed()));
-            onView(withId(R.id.tv_fortune)).check(matches(isDisplayed()));
-            onView(withId(R.id.tv_fortune)).check(matches((ViewMatchers.withText(R.string.loading_string))));
 
             Thread.sleep(10000L);
 

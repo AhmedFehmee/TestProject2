@@ -86,9 +86,4 @@ public class ApplicationTestModule {
         return appDataManager;
     }
 
-    @Provides
-    @Singleton
-    PreferencesHelper providePreferencesHelper(AppPreferencesHelper appPreferencesHelper) {
-        return appPreferencesHelper;
-    }
 }

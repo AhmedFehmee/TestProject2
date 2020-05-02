@@ -1,13 +1,13 @@
 package com.fahmy.testproject.ui.main;
 
-import com.fahmy.testproject.data.network.model.AdviceResponse;
+import com.fahmy.testproject.data.network.model.CarsResponse;
 import com.fahmy.testproject.ui.base.ActivityMvpView;
 
 public interface MainMvpView extends ActivityMvpView {
 
-    void renderAdviceMessageToUI(AdviceResponse response);
+    void renderCarsListToUI(CarsResponse carsResponse);
 
-    void retryLoadingAdviceMessage();
+    void retryLoadingCarsList();
 
-    void onErrorMessageReceived(String advice);
+    void onErrorMessageReceived(String errorMessage);
 }

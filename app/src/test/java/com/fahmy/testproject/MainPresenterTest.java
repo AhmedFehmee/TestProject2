@@ -2,7 +2,7 @@ package com.fahmy.testproject;
 
 import com.fahmy.testproject.data.DataManager;
 import com.fahmy.testproject.data.network.ApiHelper;
-import com.fahmy.testproject.data.network.model.AdviceResponse;
+import com.fahmy.testproject.data.network.model.CarsResponse;
 import com.fahmy.testproject.ui.main.MainMvpView;
 import com.fahmy.testproject.ui.main.MainPresenter;
 import org.junit.After;
@@ -44,14 +44,14 @@ public class MainPresenterTest {
     @Test
     public void presentDataFromApiTest() {
         ApiHelper mockedApiInterface = Mockito.mock(ApiHelper.class);
-        Call<AdviceResponse> mockedCall = Mockito.mock(Call.class);
+        Call<CarsResponse> mockedCall = Mockito.mock(Call.class);
 
-        Mockito.when(mockedApiInterface.getFortuneMessage()).thenReturn(mockedCall);
+        Mockito.when(mockedApiInterface.getCarsFromApi(1)).thenReturn(mockedCall);
 
         Mockito.doAnswer(invocation -> {
-            Callback<AdviceResponse> callback = invocation.getArgument(0);
+            Callback<CarsResponse> callback = invocation.getArgument(0);
 
-            callback.onResponse(mockedCall, Response.success(new AdviceResponse()));
+            callback.onResponse(mockedCall, Response.success(new CarsResponse()));
             // or callback.onFailure(mockedCall, new IOException());
 
             return null;

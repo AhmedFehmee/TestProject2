@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	app:cardElevation="20dp"
+	app:layout_constraintEnd_toEndOf="parent"
+	app:layout_constraintStart_toStartOf="parent"
+	app:layout_constraintTop_toTopOf="parent">
+
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_margin="10dp">
+
+		<androidx.appcompat.widget.AppCompatImageView
+			android:id="@+id/iv_car_image"
+			android:layout_width="0dp"
+			android:layout_height="0dp"
+			android:layout_margin="10dp"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintEnd_toStartOf="@+id/guideline"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toTopOf="parent" />
+
+		<androidx.constraintlayout.widget.Guideline
+			android:id="@+id/guideline"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:orientation="vertical"
+			app:layout_constraintGuide_percent="0.5" />
+
+		<TextView
+			android:id="@+id/tv_car_brand"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:padding="10dp"
+			android:textSize="18sp"
+			android:textStyle="bold"
+			app:layout_constraintStart_toEndOf="@+id/guideline"
+			app:layout_constraintTop_toTopOf="parent"
+			tools:text="Car Brand" />
+
+		<TextView
+			android:id="@+id/tv_cons_year"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:padding="10dp"
+			android:textSize="18sp"
+			app:layout_constraintStart_toEndOf="@+id/guideline"
+			app:layout_constraintTop_toBottomOf="@+id/tv_car_brand"
+			tools:text="2020" />
+
+		<TextView
+			android:id="@+id/tv_is_used"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:padding="10dp"
+			android:textSize="18sp"
+			app:layout_constraintStart_toEndOf="@+id/guideline"
+			app:layout_constraintTop_toBottomOf="@+id/tv_cons_year"
+			tools:text="Used" />
+	</androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

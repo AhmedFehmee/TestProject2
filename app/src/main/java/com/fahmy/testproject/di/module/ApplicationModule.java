@@ -2,14 +2,11 @@ package com.fahmy.testproject.di.module;
 
 import android.app.Application;
 import android.content.Context;
+
 import com.fahmy.testproject.data.AppDataManager;
 import com.fahmy.testproject.data.DataManager;
 import com.fahmy.testproject.data.network.ApiHelper;
-import com.fahmy.testproject.data.pref.AppPreferencesHelper;
-import com.fahmy.testproject.data.pref.PreferencesHelper;
 import com.fahmy.testproject.di.ApplicationContext;
-import com.fahmy.testproject.di.PreferencesInfo;
-import com.fahmy.testproject.utils.AppConstants;
 import java.util.concurrent.TimeUnit;
 import javax.inject.Singleton;
 import dagger.Module;
@@ -46,18 +43,6 @@ public class ApplicationModule {
     @Provides
     DataManager provideDataManager(AppDataManager AppDataManager) {
         return AppDataManager;
-    }
-
-    // Shared Preferences
-    @Provides
-    PreferencesHelper providePreferencesHelper(AppPreferencesHelper appPreferencesHelper) {
-        return appPreferencesHelper;
-    }
-
-    @PreferencesInfo
-    @Provides
-    String preferencesName() {
-        return AppConstants.PREF_NAME;
     }
 
     @Provides
